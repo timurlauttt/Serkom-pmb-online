@@ -1,0 +1,288 @@
+@extends('utama.layouts.app')
+@section('title', 'Prestasi - SMK Taman Siswa Purwokerto')
+
+@section('content')
+
+<section class="section-padding" style="margin-top: 80px;">
+    <div class="container">
+        {{-- Header --}}
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Prestasi Siswa</h1>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem;">
+            Berbagai pencapaian membanggakan siswa SMK Taman Siswa Purwokerto
+        </p>
+
+        {{-- Filter Section --}}
+        <div style="margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr auto; gap: 1rem; align-items: end;">
+                {{-- Search --}}
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-main);">Cari Prestasi</label>
+                    <input type="text" 
+                           id="searchInput"
+                           class="search-input" 
+                           placeholder="Cari prestasi..."
+                           style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem;">
+                </div>
+
+                {{-- Category Filter --}}
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-main);">Filter</label>
+                    <select id="categoryFilter"
+                            style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 1rem; background: white;">
+                        <option value="">Semua</option>
+                        <option value="jurusan">Jurusan</option>
+                        <option value="ekskul">Ekskul</option>
+                    </select>
+                </div>
+
+                {{-- Reset Button --}}
+                <div>
+                    <button id="resetBtn" class="btn btn-secondary" style="white-space: nowrap;">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- Prestasi List --}}
+        <div style="display: grid; gap: 2rem;">
+            
+            {{-- Prestasi 1 --}}
+            <div class="prestasi-card" data-category="jurusan" data-title="Lomba Web Design Tingkat Provinsi Jawa Tengah" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0;">
+                <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=300&h=200&fit=crop" 
+                     alt="Prestasi Lomba Web Design" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                        <span style="background: #fbbf24; color: #78350f; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">
+                            🥇 Juara 1
+                        </span>
+                        <span style="background: var(--primary-blue); color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            RPL
+                        </span>
+                        <span style="background: var(--accent-green); color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Lomba Web Design
+                        </span>
+                    </div>
+                    <h3 style="color: var(--text-main); margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600;">
+                        Lomba Web Design Tingkat Provinsi Jawa Tengah
+                    </h3>
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-calendar" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>15 November 2024</span>
+                        
+                        <i class="fas fa-building" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>Dinas Pendidikan Provinsi Jawa Tengah</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Prestasi 2 --}}
+            <div class="prestasi-card" data-category="ekskul" data-title="Turnamen Basket Antar SMK Se-Karesidenan Banyumas" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0;">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=200&fit=crop" 
+                     alt="Prestasi Basket" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                        <span style="background: #c0c0c0; color: #374151; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">
+                            🥈 Juara 2
+                        </span>
+                        <span style="background: #ec4899; color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Basket (Ekskul)
+                        </span>
+                    </div>
+                    <h3 style="color: var(--text-main); margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600;">
+                        Turnamen Basket Antar SMK Se-Karesidenan Banyumas
+                    </h3>
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-calendar" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>8 Oktober 2024</span>
+                        
+                        <i class="fas fa-building" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>KEMENPORA Kabupaten Banyumas</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Prestasi 3 --}}
+            <div class="prestasi-card" data-category="jurusan" data-title="Kompetisi Robotika Nasional 2024" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0;">
+                <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?w=300&h=200&fit=crop" 
+                     alt="Prestasi Robotika" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                        <span style="background: #cd7f32; color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">
+                            🥉 Juara 3
+                        </span>
+                        <span style="background: var(--primary-blue); color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            TKJ
+                        </span>
+                        <span style="background: var(--accent-green); color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Lomba Robotika
+                        </span>
+                    </div>
+                    <h3 style="color: var(--text-main); margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600;">
+                        Kompetisi Robotika Nasional 2024
+                    </h3>
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-calendar" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>22 September 2024</span>
+                        
+                        <i class="fas fa-building" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>Kementerian Pendidikan dan Kebudayaan RI</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Prestasi 4 --}}
+            <div class="prestasi-card" data-category="ekskul" data-title="English Speech Contest Tingkat Kabupaten" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0;">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=300&h=200&fit=crop" 
+                     alt="Prestasi English Speech" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                        <span style="background: #fbbf24; color: #78350f; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">
+                            🥇 Juara 1
+                        </span>
+                        <span style="background: #ec4899; color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Bahasa Asing (Ekskul)
+                        </span>
+                    </div>
+                    <h3 style="color: var(--text-main); margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600;">
+                        English Speech Contest Tingkat Kabupaten
+                    </h3>
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-calendar" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>5 Agustus 2024</span>
+                        
+                        <i class="fas fa-building" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>Dinas Pendidikan Kabupaten Banyumas</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Prestasi 5 --}}
+            <div class="prestasi-card" data-category="ekskul" data-title="Jambore Pramuka Tingkat Provinsi Jawa Tengah" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0;">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=200&fit=crop" 
+                     alt="Prestasi Pramuka" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                        <span style="background: #c0c0c0; color: #374151; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">
+                            🥈 Juara 2
+                        </span>
+                        <span style="background: #ec4899; color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Pramuka (Ekskul)
+                        </span>
+                    </div>
+                    <h3 style="color: var(--text-main); margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600;">
+                        Jambore Pramuka Tingkat Provinsi Jawa Tengah
+                    </h3>
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-calendar" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>12 Juli 2024</span>
+                        
+                        <i class="fas fa-building" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>Kwartir Daerah Pramuka Jawa Tengah</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Prestasi 6 --}}
+            <div class="prestasi-card" data-category="jurusan" data-title="Kompetisi Rencana Bisnis Tingkat Nasional" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: grid; grid-template-columns: 300px 1fr; gap: 0;">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" 
+                     alt="Prestasi Business Plan" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                        <span style="background: #fbbf24; color: #78350f; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600;">
+                            🥇 Juara 1
+                        </span>
+                        <span style="background: var(--primary-blue); color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Semua Jurusan
+                        </span>
+                        <span style="background: var(--accent-green); color: white; padding: 0.35rem 0.85rem; border-radius: 1rem; font-size: 0.8rem;">
+                            Business Plan Competition
+                        </span>
+                    </div>
+                    <h3 style="color: var(--text-main); margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600;">
+                        Kompetisi Rencana Bisnis Tingkat Nasional
+                    </h3>
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-calendar" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>18 Juni 2024</span>
+                        
+                        <i class="fas fa-building" style="color: var(--primary-blue); width: 20px;"></i>
+                        <span>Kementerian Pendidikan dan Kebudayaan RI</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@endsection
+
+@push('styles')
+<style>
+    .prestasi-card {
+        transition: all 0.3s;
+    }
+    
+    .prestasi-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+        div[style*="grid-template-columns: 300px 1fr"],
+        div[style*="grid-template-columns: 2fr 1fr auto"] {
+            grid-template-columns: 1fr !important;
+        }
+        
+        div[style*="grid-template-columns: 300px 1fr"] img {
+            height: 200px !important;
+        }
+    }
+</style>
+@endpush
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const resetBtn = document.getElementById('resetBtn');
+        const prestasiCards = document.querySelectorAll('.prestasi-card');
+
+        function filterPrestasi() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const categoryValue = categoryFilter.value;
+
+            prestasiCards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const category = card.getAttribute('data-category');
+
+                const matchSearch = title.includes(searchTerm);
+                const matchCategory = !categoryValue || category === categoryValue;
+
+                if (matchSearch && matchCategory) {
+                    card.style.display = 'grid';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterPrestasi);
+        categoryFilter.addEventListener('change', filterPrestasi);
+        
+        resetBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            categoryFilter.value = '';
+            filterPrestasi();
+        });
+    });
+</script>
+@endpush

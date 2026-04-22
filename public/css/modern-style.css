@@ -1,0 +1,477 @@
+@import url('header.css');
+
+:root {
+    /* Colors - Light Theme Focus */
+    --bg-primary: #f8fafc;
+    /* Cool Gray 50 */
+    --bg-secondary: #ffffff;
+    /* White */
+    --bg-card: #ffffff;
+    /* White */
+
+    /* Accents */
+    --primary-blue: #3b82f6;
+    /* Blue 500 */
+    --primary-blue-hover: #2563eb;
+    /* Blue 600 */
+
+    --accent-green: #16a34a;
+    /* Green 600 */
+    --accent-green-hover: #15803d;
+    /* Green 700 */
+
+    --highlight-yellow: #ca8a04;
+    /* Yellow 600 */
+    --highlight-yellow-hover: #a16207;
+    /* Yellow 700 */
+
+    --text-main: #1e293b;
+    /* Slate 800 */
+    --text-muted: #64748b;
+    /* Slate 500 */
+
+    --border-color: #e2e8f0;
+    /* Slate 200 */
+
+    /* Dedicated Header/Footer Color */
+    --header-footer-bg: #1e40af;
+    /* Blue 800 */
+
+    /* Spacing & Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    --border-radius: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+}
+
+/* Utilities */
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    background: var(--primary-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-padding {
+    padding: 4rem 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-hover));
+    color: white;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background: #f1f5f9;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-link {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.btn-link:hover {
+    color: var(--primary-blue-hover);
+    text-decoration: underline;
+}
+
+/* Hero / Banner */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url('../images/hero2.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--text-main), #475569);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+}
+
+/* Programs / Majors Cards */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+/* News & Events Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow-sm);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.news-img {
+    height: 200px;
+    width: 100%;
+    background-color: #e2e8f0;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-meta {
+    font-size: 0.875rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: 600;
+}
+
+.news-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: var(--text-main);
+}
+
+/* Stats / Partners */
+.partners {
+    background-color: white;
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.partners-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    opacity: 0.6;
+}
+
+.partners-flex:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.partner-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+/* Search Bar (for index/list pages) */
+.search-container {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-main);
+    font-family: inherit;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Sidebar/Widget Styles */
+aside div {
+    background-color: white !important;
+}
+
+/* Mobile Font Size Utility Classes */
+.text-xs {
+    font-size: 0.75rem;
+}
+
+/* 12px */
+.text-sm {
+    font-size: 0.875rem;
+}
+
+/* 14px */
+.text-base {
+    font-size: 1rem;
+}
+
+/* 16px */
+.text-lg {
+    font-size: 1.125rem;
+}
+
+/* 18px */
+.text-xl {
+    font-size: 1.25rem;
+}
+
+/* 20px */
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+/* 24px */
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+/* 30px */
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+/* 36px */
+.text-5xl {
+    font-size: 3rem;
+}
+
+/* 48px */
+
+/* Share Buttons */
+.share-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+    color: white;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+}
+
+.share-btn-instagram {
+    background: #e1306c;
+}
+
+.share-btn-facebook {
+    background: #3b5998;
+}
+
+.share-btn-twitter {
+    background: #1da1f2;
+}
+
+.share-btn-whatsapp {
+    background: #25d366;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Mobile-specific font sizes */
+    .mobile\:text-xs {
+        font-size: 0.75rem !important;
+    }
+
+    .mobile\:text-sm {
+        font-size: 0.875rem !important;
+    }
+
+    .mobile\:text-base {
+        font-size: 1rem !important;
+    }
+
+    .mobile\:text-lg {
+        font-size: 1.125rem !important;
+    }
+
+    .mobile\:text-xl {
+        font-size: 1.25rem !important;
+    }
+
+    .mobile\:text-2xl {
+        font-size: 1.5rem !important;
+    }
+
+    .mobile\:text-3xl {
+        font-size: 1.875rem !important;
+    }
+
+    .mobile\:text-4xl {
+        font-size: 2.25rem !important;
+    }
+
+    /* Mobile share buttons - horizontal with icons only */
+    .share-buttons {
+        justify-content: start;
+    }
+
+    .share-btn {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        justify-content: center;
+        font-size: 1.25rem;
+        border-radius: 50%;
+    }
+
+    .share-btn i {
+        margin: 0;
+    }
+
+    .share-btn span {
+        display: none;
+    }
+
+    .hidden-btn {
+        display: none;
+    }
+}

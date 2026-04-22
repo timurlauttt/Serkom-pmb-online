@@ -1,0 +1,253 @@
+/* Primary color override
+   This file overrides the compiled theme colors to use the new primary color
+   provided by the user: #2E7D4F
+   It intentionally targets the .theme-primary namespace and common
+   .*-primary selectors so it can be added last and take precedence.
+*/
+:root {
+  --app-primary: #2E7D4F;
+  --app-primary-dark: #266b43; /* slightly darker for hover/active */
+  --app-primary-soft: #5aa07a; /* softer/lighter for gradients */
+  --app-primary-contrast: #ffffff;
+}
+
+.theme-primary {
+  /* Keep variables available under the theme wrapper as well */
+  --primary: var(--app-primary);
+  --primary-dark: var(--app-primary-dark);
+  --primary-soft: var(--app-primary-soft);
+  --primary-contrast: var(--app-primary-contrast);
+}
+
+/* Stronger/global overrides to catch more specific compiled selectors
+   (e.g. .theme-primary .btn-flat.btn-primary, .theme-primary .bg-primary, etc.)
+   These must be loaded after compiled CSS and use !important to win where
+   the original files used !important as well. */
+/* Very high-specificity selectors: body + theme + class combos */
+body.theme-primary .wrapper .btn.btn-flat.btn-primary,
+body.theme-primary .wrapper .btn.btn-primary,
+body.theme-primary .wrapper .btn.btn-primary:hover,
+body.theme-primary .wrapper .btn.btn-primary:active,
+body.theme-primary .wrapper .btn.btn-primary:focus,
+body.theme-primary .wrapper .bg-primary,
+body.theme-primary .wrapper .bg-primary:hover,
+/* keep previous generic selectors as fallback */
+.theme-primary .btn-flat.btn-primary,
+.theme-primary .btn-flat.btn-primary:hover,
+.theme-primary .btn-flat.btn-primary:active,
+.theme-primary .btn-flat.btn-primary:focus,
+.theme-primary .btn.btn-flat.btn-primary,
+.theme-primary .btn.btn-flat.btn-primary:hover,
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.bg-primary,
+.bg-primary:hover {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+  color: var(--app-primary-contrast) !important;
+}
+
+/* Dropdown/show and disabled states */
+.theme-primary .show > .btn-primary.dropdown-toggle,
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+  color: var(--app-primary-contrast) !important;
+  opacity: 1 !important;
+}
+
+/* Buttons */
+.theme-primary .btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary-contrast) !important;
+}
+.theme-primary .btn-primary:hover,
+.theme-primary .btn-primary:active,
+.theme-primary .btn-primary:focus,
+.theme-primary .btn-primary.active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  color: var(--primary-contrast) !important;
+}
+.theme-primary .btn-outline.btn-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.theme-primary .show > .btn-outline.btn-primary.dropdown-toggle {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary-contrast) !important;
+}
+
+/* Backgrounds / badges / labels */
+.theme-primary .bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--primary-contrast) !important;
+}
+.theme-primary .badge-primary,
+.theme-primary .label-primary,
+.theme-primary .ribbon-box .ribbon-primary,
+.theme-primary .box-primary,
+.theme-primary .alert-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary-contrast) !important;
+}
+
+/* Text / border */
+.theme-primary .text-primary {
+  color: var(--primary) !important;
+}
+.theme-primary .border-primary {
+  border-color: var(--primary) !important;
+}
+
+/* Gradients */
+.bg-gradient-primary,
+.theme-primary .bg-gradient-primary,
+.theme-primary .art-bg {
+  background: linear-gradient(45deg, var(--primary), var(--primary-soft)) !important;
+}
+
+/* Panels / boxes / navs */
+.theme-primary .panel-primary > .panel-heading,
+.theme-primary .panel-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary-contrast) !important;
+}
+.theme-primary .panel-line.panel-primary .panel-heading,
+.theme-primary .panel-line.panel-primary .panel-title {
+  color: var(--primary) !important;
+  border-top-color: var(--primary) !important;
+}
+.theme-primary .nav-tabs .nav-link.active {
+  border-bottom-color: var(--primary) !important;
+  background-color: var(--primary) !important;
+  color: var(--primary-contrast) !important;
+}
+
+/* Progress bar / timeline */
+.theme-primary .progress-bar-primary {
+  background-color: var(--primary) !important;
+}
+.theme-primary .timeline__year,
+.theme-primary .timeline__box:before,
+.theme-primary .timeline__date {
+  background-color: var(--primary) !important;
+}
+
+/* Form focus states */
+.theme-primary .form-control:focus {
+  border-color: var(--primary) !important;
+  box-shadow: none !important;
+}
+
+/* Small helpers */
+.theme-primary .active.active-primary { background-color: var(--primary-dark) !important; }
+.theme-primary .box-outline-primary { border: 1px solid var(--primary) !important; }
+
+/* Make sure link hover in theme uses the new primary */
+.theme-primary a:hover, .theme-primary a:active, .theme-primary a:focus { color: var(--primary) !important; }
+
+/* Chart / demo JS hooks (common variable used by some scripts) */
+:root { --chart-primary: var(--primary); }
+
+/* Accessibility note: if you need alternate shades for contrast, adjust
+   --app-primary-dark and --app-primary-soft above to taste. */
+
+/* Target homepage/news buttons specifically (higher specificity + !important)
+   to handle cases where compiled theme CSS targets anchors inside .box/.news-slider */
+.theme-primary .news-slider a.btn,
+.theme-primary .news-slider .box a.btn,
+.theme-primary .box .news-slider a.btn,
+.theme-primary .box a.btn.btn-primary,
+.theme-primary .owl-carousel .box a.btn,
+.theme-primary .owl-item .box a.btn,
+.theme-primary .box-body a.btn,
+.theme-primary .box a.btn.btn-flat {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+  color: var(--app-primary-contrast) !important;
+}
+
+.theme-primary a.btn.btn-primary.text-center,
+.theme-primary .d-flex a.btn.btn-primary {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+  color: var(--app-primary-contrast) !important;
+}
+
+/* Explicit helper class used in views to force important overrides for specific buttons */
+.btn-primary-override,
+.theme-primary .btn-primary-override,
+body.theme-primary .btn-primary-override {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+  color: var(--app-primary-contrast) !important;
+}
+
+/* Ensure desktop navbar sits at the very top (no gap) and mobile keeps its reserved space */
+@media (min-width: 768px) {
+  .navbar.navbar-sticky-top {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99999 !important;
+  }
+  /* remove any top padding applied to body on desktop */
+  body {
+    padding-top: 0 !important;
+  }
+  .wrapper { padding-top: 0 !important; }
+}
+
+/* --- Professional polish: typography, spacing, card visuals --- */
+/* Headings */
+.text-bold { font-weight: 700 !important; }
+.fs-32 { font-size: 32px !important; }
+.fs-24 { font-size: 24px !important; }
+.fs-18 { font-size: 18px !important; }
+
+/* Hero area */
+#hero { padding: 40px 0 24px !important; }
+.slider-img { border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+
+/* Section spacing (consistent rhythm) */
+.mt-16 { margin-top: 16px !important; }
+.mt-35 { margin-top: 35px !important; }
+.px-80 { padding-left: 80px !important; padding-right: 80px !important; }
+.p-4 { padding: 1rem !important; }
+
+/* Cards / boxes */
+.box { background: #fff; border-radius: 10px; border: 0; box-shadow: 0 6px 18px rgba(20,20,30,0.04); }
+.box .box-body { padding: 22px !important; }
+.card { border-radius: 10px; overflow: hidden; }
+.card .card-body { padding: 20px !important; }
+
+/* Stat numbers */
+.price { font-size: 36px !important; font-weight: 700 !important; letter-spacing: -0.5px; }
+
+/* Buttons */
+.btn-md { padding: 10px 18px !important; font-size: 15px !important; border-radius: 8px !important; }
+.btn-primary-override { box-shadow: 0 6px 18px rgba(46,125,79,0.12) !important; }
+
+/* News slider items */
+.news-slider .box { margin: 8px; }
+.news-slider .box .box-title { font-size: 20px; font-weight: 600; }
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .px-80 { padding-left: 16px !important; padding-right: 16px !important; }
+  .fs-32 { font-size: 26px !important; }
+  .price { font-size: 28px !important; }
+}
+
+/* small decorative refinements */
+a.text-muted { opacity: 0.9; }
+.box-text { color: #525f7a; }

@@ -1,0 +1,166 @@
+@extends('utama.layouts.app')
+@section('title', 'PPDB SMK TamanSiswa Purwokerto')
+@section('content')
+
+<!---page Title --->
+<section class="bg-img pt-150 pb-20" data-overlay="7"
+    style="background-image: url(../images/front-end-img/background/bg-8.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h2 class="page-title text-black">PPDB SMK TAMANSISWA PURWOKERTO</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Page content -->
+
+<section class="py-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-8 col-12">
+                <div class="blog-post mb-30">
+                    <div class="entry-image clearfix">
+                        <img class="img-fluid" src="{{ asset('images/ppdb.png') }}" alt="">
+                    </div>
+                    <div class="blog-detail">
+                        <hr>
+                        <div class="entry-title mb-10">
+                            <a href="#" class="fs-24">Alur PPDB SMK TamanSiswa Purwokerto</a>
+                        </div>
+                        <div class="entry-content">
+                            <p>
+                                Syarat Pendaftaran : <br>
+                                1. Pasfoto 4x6 cm <br>
+                                2. Fotokopi Ijazah/ Surat Keterangan Lulus <br>
+                                3. Fotokopi Akte Kelahiran <br>
+                                4. Fotokopi Kartu Keluarga <br>
+                                5. Fotokopi KTP Orangtua <br>
+                                6. Fotokopi Kartu Indonesia Pintar (KIP) <br>
+                            </p>
+                        </div>
+                        <div class="entry-content">
+                            <p>
+                                Biaya Pendaftaran & Seragam : <br>
+                                • Biaya Pendaftaran : Gratis <br>
+                                • Biaya Seragam : Rp 700.000 <br>
+                                • Biaya MPLS : Rp 650.000 <br>
+                                Total Biaya : Rp 1.350.000 <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-body">
+                        <div class="widget">
+                            <h4 class="mt-0 pb-15 mb-25 bb-1">Share</h4>
+                            <ul class="list-inline mb-0">
+                                <li><a href="#" class="waves-effect waves-circle btn btn-social-icon btn-circle btn-facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="waves-effect waves-circle btn btn-social-icon btn-circle btn-twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="waves-effect waves-circle btn btn-social-icon btn-circle btn-instagram"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#" class="waves-effect waves-circle btn btn-social-icon btn-circle btn-linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#" class="waves-effect waves-circle btn btn-social-icon btn-circle btn-youtube"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-body">
+                        <div class="blog-comment">
+                            <h4 class="mt-0 pb-15 mb-25 bb-1">04 Comments</h4>
+                            <div class="comment-1">
+                                <div class="comment-photo">
+                                    <img class="img-fluid" src="../images/front-end-img/avatar/1.jpg" alt="">
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
+                                    <div class="port-post-social float-end">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                    <p>Sit amet nibh vulputate cursus a sit amet mauris lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio <a href="#">http://themeforest.net</a> Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat </p>
+                                </div>
+                            </div>
+                            <div class="comment-1 comment-2">
+                                <div class="comment-photo">
+                                    <img class="img-fluid" src="../images/front-end-img/avatar/2.jpg" alt="">
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
+                                    <div class="port-post-social float-end">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                    <p>Vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh..</p>
+                                </div>
+                            </div>
+                            <div class="comment-1 comment-2">
+                                <div class="comment-photo">
+                                    <img class="img-fluid" src="../images/front-end-img/avatar/3.jpg" alt="">
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
+                                    <div class="port-post-social float-end">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                    <p>Aenean sollicitudin, lorem quis bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet..</p>
+                                </div>
+                            </div>
+                            <div class="comment-1">
+                                <div class="comment-photo">
+                                    <img class="img-fluid" src="../images/front-end-img/avatar/4.jpg" alt="">
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
+                                    <div class="port-post-social float-end">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                    <p>Bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris <a href="#">http://themeforest.net</a> Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-body">
+                        <div class="widget">
+                            <h4 class="mt-0 pb-15 mb-25 bb-1">Leave a Reply</h4>
+                            <form id="contactform" class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Website URL">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email Adress">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="7" placeholder="message"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <button name="submit" type="submit" value="Send" class="btn btn-primary"><span>Submit Now</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection
