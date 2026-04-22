@@ -1035,10 +1035,20 @@ Akses: `http://localhost:8000`
 
 ## 📞 Support
 
-**SMK Taman Siswa Wapwt**
-- 📧 Email: info@smktamansiswapwt.sch.id
-- 📱 WhatsApp: [Contact]
-- 🌐 Website: https://smktamansiswapwt.sch.id
+**Hubungi Developer:**
+- 📧 Email: iripyoga@gmail.com
+
+---
+
+## ⚖️ Pernyataan Hukum & Lisensi
+
+**PERHATIAN:** Repository ini dibuat khusus untuk keperluan **Sertifikasi Kompetensi BNSP Pengembang Web**. 
+
+Penggunaan repository ini untuk keperluan selain sertifikasi kompetensi **TANPA IZIN TERTULIS** dari pemilik akan dikenakan **TINDAKAN HUKUM** sesuai dengan ketentuan peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas pada:
+- Undang-Undang No. 28 Tahun 2014 tentang Hak Cipta
+- Peraturan perundang-undangan terkait perlindungan karya intelektual
+
+Proyek ini adalah milik SMK Taman Siswa Wapwt dan dilindungi hak cipta sepenuhnya.
 
 ---
 
